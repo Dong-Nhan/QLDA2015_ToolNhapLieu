@@ -29,6 +29,14 @@ $('#pretty-print-btn').click(function () {
   let content = quill.getContents();
   $('#contents-container').text(JSON.stringify(content, null, 2));
 });
+$('#insert-db-btn').click(function () {
+  let content = quill.getContents();
+  
+});
+$('#btn-add-category').click(function() {
+  alert('123');
+})
+
 
 // $('#get-json-string-contents-btn').click(function () {
 //   let content = quill.getContents();

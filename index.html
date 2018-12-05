@@ -31,7 +31,9 @@
 <body>
 
   <div class="container-fluid">
+
     <div class="row justify-content-center mt-4">
+      
       <div class="col-7">
         <div id="toolbar-container">
           <span class="ql-formats">
@@ -88,9 +90,7 @@
           </label>
           <div class="col-sm-9">
             <div class="input-group">
-              <select class="form-control" id="inputCustomerId">
-                <option value="{{customerID}}">Toán học</option>
-
+              <select class="form-control" id="select-categories">
               </select>
               <!-- <div class="input-group-addon input-group-button">
                       <button type="button" id="show-contact-modal-button" class="btn btn-primary">Add contact</button>
@@ -103,14 +103,13 @@
           </div>
 
         </div>
-        <div class="form-group customer-id">
+        <div class="form-group topic-id">
           <label for="input" class="col-sm-3 control-label">Topic
           </label>
           <div class="col-sm-9">
             <div class="input-group">
 
-              <select class="form-control" id="inputCustomerId">
-                <option value="{{customerID}}">Phân số</option>
+              <select class="form-control" id="select-topics">
               </select>
               <a href="#!" style="margin-left: 20px;" data-toggle="modal" data-target="#modal-add-topic" data-whatever="Add" class="text-success"
                 id="btnAddValue">
@@ -119,17 +118,18 @@
             </div>
           </div>
         </div>
-        <div class="form-group booking-id">
-          <label for="input" class="col-sm-3 control-label">Lesson title</label>
+        <div class="form-group lesson-id">
+          <label for="input" class="col-sm-6 control-label">Lesson title</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputBookingId" placeholder="Lesson title ">
-            <div class="messError text-danger ">Lesson title</div>
+            <input type="text" class="form-control" id="input-lesson-title" placeholder="Lesson title ">
+            <div class="messError text-danger ">Lesson title is required</div>
           </div>
         </div>
-        <div class="row mt-2">
+        <div class="row mt-2  lesson-content">
 
           <div class="col">
-            <textarea id="contents-container" class="w-100"></textarea>
+            <textarea id="contents-container" class="w-100" disabled></textarea>
+            <div class="messError text-danger ">Lesson content is required</div>
           </div>
         </div>
 
@@ -169,7 +169,7 @@
                   <label for="input" class="col-sm-6 control-label">Category name</label>
                   <div class="col-sm-9">
                     <div class='input-group date'>
-                      <input type='text' class="form-control" id="inputBookingDate" />
+                      <input type='text' class="form-control" id="inputCategory" />
     
                     </div>
                     <div class="messError text-danger">Category name is required</div>
@@ -183,7 +183,7 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-add-category">Add</button>
+              <button type="button" class="btn btn-danger" id="btn-add-category">Add</button>
             </div>
 
           </div>
@@ -207,7 +207,7 @@
                   <label for="input" class="col-sm-6 control-label">Topic name</label>
                   <div class="col-sm-9">
                     <div class='input-group date'>
-                      <input type='text' class="form-control" id="inputBookingDate" />
+                      <input type='text' class="form-control" id="inputTopic" />
     
                     </div>
                     <div class="messError text-danger">Topic name is required</div>
@@ -221,13 +221,22 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-add-topic">Add</button>
+              <button type="button" class="btn btn-danger"  id="btn-add-topic">Add</button>
             </div>
 
           </div>
         </div>
       </div>
-
+      <div class="alert alert-success" id="success-alert"  style="position: absolute; top: 20%;">
+          <button type="button" class="close" data-dismiss="alert" style="padding-left: 5px">x</button>
+          <strong>Success! </strong>
+          <span></span>
+      </div>
+      <div class="alert alert-danger" id="error-alert"  style="position: absolute; top: 20%;">
+          <button type="button" class="close" data-dismiss="alert" style="padding-left: 5px">x</button>
+          <strong>Error! </strong>
+          <span></span>
+      </div>
     </div>
 
   </div>

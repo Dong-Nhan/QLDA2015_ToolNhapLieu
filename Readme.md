@@ -7,10 +7,10 @@
 ### 2. Open project in Visual Code
 
 ### 3. install extension "Live Server"
-[https://image.prntscr.com/image/9b_usC9fT4i9U8DrkVMlYg.png]
+![alt text](https://image.prntscr.com/image/9b_usC9fT4i9U8DrkVMlYg.png "install extension Live Server")
 
 ### 4. Click icon Go Live to run server
-[https://image.prntscr.com/image/lWmXR2nDSYSZhPDyP854Lg.png]
+![alt text](https://image.prntscr.com/image/lWmXR2nDSYSZhPDyP854Lg.png "Run server")
 
-### 4. Go to url: localhost:5500
+### 4. Go to url: [localhost:5500](http://localhost:5500)
 

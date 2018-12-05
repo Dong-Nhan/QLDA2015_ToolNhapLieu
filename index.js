@@ -1,5 +1,5 @@
 
-const HOST = "http://localhost:8003/api/learning/";
+const HOST = "http://103.114.107.16:8003/api/learning/";
 var categories = null;
 $(function () {
 
@@ -96,7 +96,7 @@ $('#pretty-print-btn').click(function () {
 });
 
 $('#insert-db-btn').click(function () {
-  
+
   $(".lesson-id .messError").hide();
   
   let content = $("#contents-container").val();

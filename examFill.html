@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" />
+
+    <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+
+    <style>
+        #contents-container {
+            min-height: 50vh;
+        }
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row justify-content-center mt-4">
+
+            <div class="col-7">
+                <div id="toolbar-container">
+                    <span class="ql-formats">
+                        <select class="ql-font"></select>
+                        <select class="ql-size"></select>
+                    </span>
+                    <span class="ql-formats">
+                        <button class="ql-bold"></button>
+                        <button class="ql-italic"></button>
+                        <button class="ql-underline"></button>
+                        <button class="ql-strike"></button>
+                    </span>
+                    <span class="ql-formats">
+                        <select class="ql-color"></select>
+                        <select class="ql-background"></select>
+                    </span>
+                    <span class="ql-formats">
+                        <button class="ql-script" value="sub"></button>
+                        <button class="ql-script" value="super"></button>
+                    </span>
+                    <span class="ql-formats">
+                        <button class="ql-header" value="1"></button>
+                        <button class="ql-header" value="2"></button>
+                        <button class="ql-blockquote"></button>
+                        <button class="ql-code-block"></button>
+                    </span>
+                    <span class="ql-formats">
+                        <button class="ql-list" value="ordered"></button>
+                        <button class="ql-list" value="bullet"></button>
+                        <button class="ql-indent" value="-1"></button>
+                        <button class="ql-indent" value="+1"></button>
+                    </span>
+                    <span class="ql-formats">
+                        <button class="ql-direction" value="rtl"></button>
+                        <select class="ql-align"></select>
+                    </span>
+                    <span class="ql-formats">
+                        <button class="ql-link"></button>
+                        <button class="ql-image"></button>
+                        <button class="ql-video"></button>
+                        <button class="ql-formula"></button>
+                    </span>
+                    <span class="ql-formats">
+                        <button class="ql-clean"></button>
+                    </span>
+                </div>
+                <div id="editor-container"></div>
+            </div>
+            <div class="col">
+
+                <div class="form-group customer-id">
+                    <label for="input" class="col-sm-3 control-label">
+                        Category
+                    </label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <select class="form-control" id="select-categories">
+                                <option value="math">Toán học</option>
+                                <option value="vietnamese">Tiếng Việt</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group exam-id">
+                    <label for="input" class="col-sm-3 control-label">Examination Title
+                    </label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+
+                            <select class="form-control" id="select-exams">
+                            </select>
+                            <a href="#!" style="margin-left: 20px;" data-toggle="modal" data-target="#modal-add-exam" data-whatever="Add" class="text-success"
+                                id="btnAddValue">
+                                <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" form-group  question-content">
+                    <label for="input" class="col-sm-6  control-label">Question</label>
+                    <div class="col">
+                        <textarea id="contents-container" class="w-100" disabled rows="0"></textarea>
+                        <div class="messError text-danger ">Lesson content is required</div>
+                    </div>
+                </div>
+                <div class="form-group answer">
+                    <label for="input" class="col-sm-6 control-label">Answer</label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="input-answer" placeholder="Answer">
+                            <div class="messError text-danger">Answer is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <button id="get-json-contents-btn" class="btn btn-success">Get JSON</button>
+
+                    </div>
+                    <div class="col-3">
+                        <button id="pretty-print-btn" class="btn btn-success">Pretty print</button>
+                    </div>
+                    <div class="col-3">
+                        <button id="insert-db-btn" class="btn btn-success" data-toggle="modal" data-target="#myModal">Insert database
+                        </button>
+                    </div>
+
+                    <!-- <div class="col-3">
+              <button id="get-json-string-contents-btn" class="btn btn-success">Get JSON string</button>
+            </div> -->
+                </div>
+            </div>
+            <!-- The Modal -->
+
+            <div class="modal" id="modal-add-exam">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add Exam</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form class="form-horizontal" action="#" method="post">
+                                <div class="form-group exam-numberQuestion">
+                                    <label for="input" class="col-sm-6 control-label">Number question</label>
+                                    <div class="col-sm-9">
+                                        <div class='input-group date'>
+                                            <input type='number' min="1" class="form-control" id="numberQuestion" />
+                                        </div>
+                                        <div class="messError text-danger">Number question is required greater 1</div>
+                                    </div>
+                                </div>
+                                <div class="form-group exam-time-left">
+                                    <label for="input" class="col-sm-6 control-label">Time Left ( second )</label>
+                                    <div class="col-sm-9">
+                                        <div class='input-group date'>
+                                            <input type='number' min="60" class="form-control" id="inputExamTimeLeft" />
+                                        </div>
+                                        <div class="messError text-danger">Time left is required greater 60</div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" id="btn-add-exam">Add</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-success" id="success-alert" style="position: absolute; top: 20%;">
+                <button type="button" class="close" data-dismiss="alert" style="padding-left: 5px">x</button>
+                <strong>Success! </strong>
+                <span></span>
+            </div>
+            <div class="alert alert-danger" id="error-alert" style="position: absolute; top: 20%;">
+                <button type="button" class="close" data-dismiss="alert" style="padding-left: 5px">x</button>
+                <strong>Error! </strong>
+                <span></span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <!-- Main Quill library -->
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <script src="/examFill.js"></script>
+</body>
+
+</html>

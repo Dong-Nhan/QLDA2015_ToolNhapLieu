@@ -91,28 +91,23 @@
                     <div class="col-sm-9">
                         <div class="input-group">
                             <select class="form-control" id="select-categories">
+                                <option value="math">Toán học</option>
+                                <option value="vietnamese">Tiếng Việt</option>
                             </select>
-                            <!-- <div class="input-group-addon input-group-button">
-                      <button type="button" id="show-contact-modal-button" class="btn btn-primary">Add contact</button>
-                  </div> -->
-                            <a href="#!" style="margin-left: 20px;" data-toggle="modal" data-target="#modal-add-category"
-                                data-whatever="Add" class="text-success" id="btnAddValue">
-                                <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                            </a>
                         </div>
 
                     </div>
 
                 </div>
-                <div class="form-group topic-id">
-                    <label for="input" class="col-sm-3 control-label">Topic
+                <div class="form-group exam-id">
+                    <label for="input" class="col-sm-3 control-label">Examination Title
                     </label>
                     <div class="col-sm-9">
                         <div class="input-group">
 
-                            <select class="form-control" id="select-topics">
+                            <select class="form-control" id="select-exams">
                             </select>
-                            <a href="#!" style="margin-left: 20px;" data-toggle="modal" data-target="#modal-add-topic"
+                            <a href="#!" style="margin-left: 20px;" data-toggle="modal" data-target="#modal-add-exam"
                                 data-whatever="Add" class="text-success" id="btnAddValue">
                                 <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                             </a>
@@ -194,76 +189,46 @@
                 </div>
             </div>
             <!-- The Modal -->
-            <div class="modal" id="modal-add-category">
+
+            <div class="modal" id="modal-add-exam">
                 <div class="modal-dialog">
                     <div class="modal-content">
 
                         <!-- Modal Header -->
                         <div class="modal-header">
-                            <h4 class="modal-title">Add Category</h4>
+                            <h4 class="modal-title">Add Exam</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 
                         <!-- Modal body -->
                         <div class="modal-body">
                             <form class="form-horizontal" action="#" method="post">
-                                <div class="form-group booking-date">
-                                    <label for="input" class="col-sm-6 control-label">Category name</label>
+                                <div class="form-group exam-numberQuestion">
+                                    <label for="input" class="col-sm-6 control-label">Number question</label>
                                     <div class="col-sm-9">
                                         <div class='input-group date'>
-                                            <input type='text' class="form-control" id="inputCategory" />
-
+                                            <input type='number' min="1" class="form-control" id="numberQuestion" />
                                         </div>
-                                        <div class="messError text-danger">Category name is required</div>
-
+                                        <div class="messError text-danger">Number question is required greater 1</div>
                                     </div>
                                 </div>
-
+                                <div class="form-group exam-time-left">
+                                    <label for="input" class="col-sm-6 control-label">Time Left ( 
+                                        second )</label>
+                                    <div class="col-sm-9">
+                                        <div class='input-group date'>
+                                            <input type='number' min="60" class="form-control" id="inputExamTimeLeft" />
+                                        </div>  
+                                        <div class="messError text-danger">Time left is required greater 60</div>
+                                    </div>
+                                </div>
                             </form>
                         </div>
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger" id="btn-add-category">Add</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal" id="modal-add-topic">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Add Topic</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <form class="form-horizontal" action="#" method="post">
-                                <div class="form-group booking-date">
-                                    <label for="input" class="col-sm-6 control-label">Topic name</label>
-                                    <div class="col-sm-9">
-                                        <div class='input-group date'>
-                                            <input type='text' class="form-control" id="inputTopic" />
-
-                                        </div>
-                                        <div class="messError text-danger">Topic name is required</div>
-
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger" id="btn-add-topic">Add</button>
+                            <button type="button" class="btn btn-danger" id="btn-add-exam">Add</button>
                         </div>
 
                     </div>
@@ -297,7 +262,7 @@
     <!-- Main Quill library -->
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
 
-    <script src="/exercise.js"></script>
+    <script src="/examChoice.js"></script>
 </body>
 
 </html>

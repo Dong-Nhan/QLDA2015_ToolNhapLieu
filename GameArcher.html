@@ -17,13 +17,11 @@
     <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
-
-
     <style>
         #contents-container {
-            min-height: 30vh;
-        }
-    </style>
+      min-height: 20vh;
+    }
+  </style>
 
     <title>Hello, world!</title>
 </head>
@@ -34,54 +32,7 @@
 
         <div class="row justify-content-center mt-4">
 
-            <div class="col-7">
-                <div id="toolbar-container">
-                    <span class="ql-formats">
-                        <select class="ql-font"></select>
-                        <select class="ql-size"></select>
-                    </span>
-                    <span class="ql-formats">
-                        <button class="ql-bold"></button>
-                        <button class="ql-italic"></button>
-                        <button class="ql-underline"></button>
-                        <button class="ql-strike"></button>
-                    </span>
-                    <span class="ql-formats">
-                        <select class="ql-color"></select>
-                        <select class="ql-background"></select>
-                    </span>
-                    <span class="ql-formats">
-                        <button class="ql-script" value="sub"></button>
-                        <button class="ql-script" value="super"></button>
-                    </span>
-                    <span class="ql-formats">
-                        <button class="ql-header" value="1"></button>
-                        <button class="ql-header" value="2"></button>
-                        <button class="ql-blockquote"></button>
-                        <button class="ql-code-block"></button>
-                    </span>
-                    <span class="ql-formats">
-                        <button class="ql-list" value="ordered"></button>
-                        <button class="ql-list" value="bullet"></button>
-                        <button class="ql-indent" value="-1"></button>
-                        <button class="ql-indent" value="+1"></button>
-                    </span>
-                    <span class="ql-formats">
-                        <button class="ql-direction" value="rtl"></button>
-                        <select class="ql-align"></select>
-                    </span>
-                    <span class="ql-formats">
-                        <button class="ql-link"></button>
-                        <button class="ql-image"></button>
-                        <button class="ql-video"></button>
-                        <button class="ql-formula"></button>
-                    </span>
-                    <span class="ql-formats">
-                        <button class="ql-clean"></button>
-                    </span>
-                </div>
-                <div id="editor-container"></div>
-            </div>
+
             <div class="col">
 
                 <div class="form-group customer-id">
@@ -91,34 +42,19 @@
                     <div class="col-sm-9">
                         <div class="input-group">
                             <select class="form-control" id="select-categories">
-                                <option value="math">Toán học</option>
-                                <option value="vietnamese">Tiếng Việt</option>
+                                <option value="math_1">Toán học</option>
+                                <option value="vietnamese_1">Tiếng Việt</option>
                             </select>
                         </div>
 
                     </div>
 
-                </div>
-                <div class="form-group exam-id">
-                    <label for="input" class="col-sm-5 control-label">Examination Title
-                    </label>
-                    <div class="col-sm-9">
-                        <div class="input-group">
-
-                            <select class="form-control" id="select-exams">
-                            </select>
-                            <a href="#!" style="margin-left: 20px;" data-toggle="modal" data-target="#modal-add-exam" data-whatever="Add" class="text-success"
-                                id="btnAddValue">
-                                <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
 
                 <div class=" form-group  question-content">
                     <label for="input" class="col-sm-6  control-label">Question</label>
                     <div class="col">
-                        <textarea id="contents-container" class="w-100" disabled rows="0"></textarea>
+                        <textarea id="contents-container" class="w-100" rows="0"></textarea>
                         <div class="messError text-danger ">Lesson content is required</div>
                     </div>
                 </div>
@@ -133,15 +69,8 @@
                 </div>
                 <div class="row">
                     <div class="col-3">
-                        <button id="get-json-contents-btn" class="btn btn-success">Get JSON</button>
-
-                    </div>
-                    <div class="col-3">
-                        <button id="pretty-print-btn" class="btn btn-success">Pretty print</button>
-                    </div>
-                    <div class="col-3">
-                        <button id="insert-db-btn" class="btn btn-success" data-toggle="modal" data-target="#myModal">Insert database
-                        </button>
+                        <button id="insert-db-btn" class="btn btn-success" data-toggle="modal" data-target="#myModal">Insert
+                            database</button>
                     </div>
 
                     <!-- <div class="col-3">
@@ -174,11 +103,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group exam-time-left">
-                                    <label for="input" class="col-sm-6 control-label">Time Left ( second )</label>
+                                    <label for="input" class="col-sm-6 control-label">Time Left ( 
+                                        second )</label>
                                     <div class="col-sm-9">
                                         <div class='input-group date'>
                                             <input type='number' min="60" class="form-control" id="inputExamTimeLeft" />
-                                        </div>
+                                        </div>  
                                         <div class="messError text-danger">Time left is required greater 60</div>
                                     </div>
                                 </div>
@@ -222,7 +152,7 @@
     <!-- Main Quill library -->
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
 
-    <script src="/examFill.js"></script>
+    <script src="/GameArcher.js"></script>
 </body>
 
 </html>

@@ -36,7 +36,7 @@ $('#insert-db-btn').click(function () {
     return;
   }
   if (answer === "") {
-    $(".choice-a .messError").show();
+    $(".answer .messError").show();
     return;
   }
   
